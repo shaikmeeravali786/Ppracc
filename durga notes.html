@@ -1,0 +1,773 @@
+"""
+operators:
+
+1.arithmatic oprators :: =,-,*,/,%,//,**
+2.Comparison operators :: ==, !=, <=, >= ,>, <
+3.Assignment operators :: =, +=, -=, %=, **=, //=
+4.Logical operators :: and , or , not
+5.Bitwise operator :: &, |, ^, ~ , <<, >>
+6.Membership operator :: in, not in
+7.Identity operator :: is, is not
+
+ 1. Arithmetic operators
+
++, - , * ,
+/ == division
+% == modulo manaku result lo divide chesina value vachidhi
+// == floor value (manam integer value isthe integer value vachidhi lekapothe float value esthe aa value vachidhi)
+** == power operator
+
+Relational operators:
+
+>, <, >=, <=
+
+
+Equality operators:
+==, !=
+
+Logical operators :
+
+and : if both arguments are True the only result will be True
+or  : if atleast one argument is True then result is True
+not : complement
+
+for non-boolean types behaviour:
+
+0 == means False
+non-zero == True
+
+empty string is always treated as False
+
+
+
+Bitwise operator:
+
+&,|,^,~,<<,>>
+
+These operators are applicable for int and boolean types
+bymistake if we are tring to apply any other type then we will get Error.
+
+Assignment operator ==> "="
+all the possible "compound assingment operator"
++=
+-=
+/=
+%=
+//=
+**=
+&==
+
+
+Ternary operator:
+
+syntax::
+
+x= firstValue if condition else secondValue
+
+if condition is True then FirstValue will be considered else secondValue will be considered.
+
+
+eg1:
+a,b=10,20
+x=30 if a<b else 40
+print(x)
+
+o/p:: 30
+
+
+
+EG2 :: take 2 inputs and print the minimum value from the keyboard
+a=int(input("enter a number: "))
+b=int(input("enter a number: "))
+x=a if a<b else b
+print(x)
+o/p::
+enter a number: 10
+enter a number: 20
+min value is 10
+
+
+
+
+write a program to print max numbers of taken inputs
+data1=int(input("enter a number: "))
+data2=int(input("enter a number: "))
+x=data1 if data1>data2 else data2
+print(x)
+
+
+### eg3:: program for min of 3 number by using ternary operator
+a=int(input("enter a number: "))
+b=int(input("enter a number: "))
+c=int(input("enter a number: "))
+x=a if a<b and a<c else b if b<c else c
+print(x)
+o/p::
+enter a number: 4
+enter a number: 3
+enter a number: 7
+3
+
+## program for max of 3 numbers by using ternary operator
+a=int(input("enter a number: "))
+b=int(input("enter a number: "))
+c=int(input("enter a number: "))
+x=a if a>b and a>c else b if b>c else c
+print(x)
+
+o/p::
+enter a number: 1
+enter a number: 7
+enter a number: 4
+7
+
+
+## write the program for both numbers are equal by using ternary operator
+
+a=int(input("enter a number: "))
+b=int(input("enter a numebr: "))
+x=("both numbers are equal" if a==b else "First number is lesss than second number" if a<b else "first number is greaest than second number")
+print(x)
+
+o/p:
+enter a number: 33
+enter a numebr: 33
+both numbers are equal
+
+
+
+
+
+Special operators::
+
+1.identity operator (is , isnot) # we use operators for adress comparision.
+
+
+points::
+r1 is r2 returns True if both r1 and r2 are pointing to the same object
+
+r1 isnot r2 returns True if both r1and r2 are not pointing to the same object
+
+eg1::
+
+
+a=10
+b=10
+print(id(a))
+print(id(b))
+print(a is b)
+
+x=True
+y=True
+print(id(x))
+print(id(y))
+print(x is y)
+
+o/p::
+2260845750864
+2260845750864
+True
+140718899492968
+140718899492968
+True
+
+
+list1=["one","two","three"]
+list2=["one","two","three"]
+print(id(list1))
+print(id(list2))
+print(list1 is list2)
+print(list1 is not list2)
+
+o/p::
+2230022585024
+2230022584256
+False
+True
+
+## we can use "is" operator for adress comparision where as "==" operator for content comparision
+
+
+2. Membership Operator(in , not in)
+
+in ==>> Returns True if the given object  present in the specified collections
+not in ==>> Retunrs True if the given object not inn the specified collection
+
+
+
+data="hello meeravali how are you"
+print("meeravali" in data) #o/p:: True
+
+data1=["sunny","bunny","chinny","pinny"]
+print("pinny" in data1)
+print("chinny" in data1)
+print("meera" not in data1)
+
+o/p::
+True
+True
+True
+True
+
+
+Input and output statements::
+
+Read 2 numbers from keyboard and print sum of 2 numbers::
+
+x=int(input("enter a number: "))
+y=int(input("enter a number: "))
+print("the sum", x+y)
+o/p::
+enter a number: 10
+enter a number: 22
+the sum 32
+
+
+print("the sum", int(input("enter a number: "))+int(input("enter a number: ")))
+
+o/p::
+enter a number: 10
+enter a number: 9
+the sum 19
+
+
+
+EVAL::eval() can evaluate the input to list, tuple, set etc... based on the provided input.
+
+
+x=eval("10+20+30")
+print(x)
+
+eval("10")---int type
+eval("10.5")---float value
+eval("True")---boolean type
+eval("False")---boolean type
+
+::wt type we enter in input that type will get output
+note:: eval() always taking the string argument only, but that string should represented some valid non-string value internally.
+
+x=eval("10+20")
+print(type(x))
+print(x)
+
+o/p::
+<class 'int'>
+30
+
+x=eval(input("enter some expresion: ")) #we cantake take some expresion in eval but we cant take the expresion in intput directily
+print(x)
+o/p::
+enter some expresion: 2*3+6-4
+8
+
+
+how to read multiple values from the keyboard in a single line::
+
+s=input("enter two numbers: ")
+print(s)
+l=s.split()
+print(l)
+
+s=input("enter two numbers").split()
+print(s)
+
+o/p::
+enter two numbers: 10 20
+10 20
+['10', '20']
+enter two numbers10 20
+['10', '20']
+
+a,b=input("enter two numbers").split()
+
+#for each string present in this list, convert into int values
+
+list comprehension::
+a,b=[int(x) for x in input("enter a 2 numbers: ").split()]
+print(a,b)
+
+
+a,b=[int(x) for x in input("enter two numbers:").split()]
+print(type(a))
+print(a,b)
+
+o/p::
+enter two numbers:10 20
+<class 'int'>
+10 20
+
+## To read int values from the keyboard in a single line and print the product.
+
+a,b=[int(x) for x in input("enter 2 int values: ").split()]
+print("the product:", a*b)
+o/p::
+enter 2 int values: 10 20
+the product: 200
+
+a,b=[int(x) for x in input("enter two numbers:").split(',')]
+print("the prooduct:", a*b)
+
+o/p::
+enter two numbers:10,20
+the prooduct: 200
+
+
+a,b,c=[float(x) for x in input("enter 3 numbers: ").split('plus')]
+print("The sum:",a+b+c)
+
+o/p:
+enter 3 numbers: 10plus10plus10
+The sum: 30.0
+
+
+Comand Line arguments:
+
+1. The arguments which are passing from the command prompt.
+2. command line arguments are always str type only.
+
+python test.py 10 20 30
+
+argv --->this is present in the sys module
+argv ---> list of values
+      ---> contains 4 values
+      ---> test.py 10 20 30
+argv[0] ---> test.py
+argv[1] ---> 10
+argv[2] ----> 20
+argv[3] ----> 30
+
+note::
+Dynamic typed input from the keyboard :: input() ----manam input thiskoni exucute chestham ----aalla kakummdaa manam (ex:: python test.py 10 20 30) exucute chesetapudu values estham ella evvataniki manam "argv" use chestham
+
+from sys import argv
+print(type(argv))
+print(argv)
+o/p::
+<class 'list'>
+['M:/Pprac/Durga.py']
+
+
+from sys import argv
+print("the number of arggumnets:", len(argv))
+print("the list of command line argumnets:", argv)
+
+o/p::
+(venv) PS M:\Pprac> python durga.py 10 20 30
+the number of arggumnets: 4
+the list of command line argumnets: ['durga.py', '10', '20', '30']
+
+
+
+from sys import argv
+print("the comandline numbers: ", len(argv))
+print("the command line arguments", argv)
+
+o/p::
+(venv) PS M:\Pprac> python durga.py 1 2 3 4 5
+the comandline numbers:  6
+the command line arguments ['durga.py', '1', '2', '3', '4', '5']
+
+
+from sys import argv
+print("the comand line arguments", len(argv))
+print("the command line arguments", argv)
+print("first command line ", argv[0])
+print("second command line", argv[1])
+for x in argv:
+    print(x)
+
+## read int values from the keyboard as command line arguments and print the sum
+
+py test.py 10 20 30
+
+argv[1:]---to get values from 1
+
+from sys import argv
+x=argv[1:]  #[10,20,30]
+print(x)
+
+o/p::
+(venv) PS M:\Pprac> python durga.py 10 20 30
+['10', '20', '30']
+
+
+from sys import argv
+x=argv[1:]
+sum=0
+for i in x:
+    n=int(i)
+    sum=sum+n
+print("the sum of arguments", sum)
+
+
+from sys import argv
+print(argv[1])
+
+o/p::
+(venv) PS M:\Pprac> python durga.py meera vali
+meera
+(venv) PS M:\Pprac> python durga.py 'meera vali'
+meera vali
+(venv) PS M:\Pprac> python durga.py "meera vali"
+meera vali
+
+from sys import argv
+print(argv[1]+argv[2]) ## string concatenation happens between argv[1]+argv[2]----> beacuase these are the string type
+o/p::
+(venv) PS M:\Pprac> python durga.py 10 20
+1020
+
+
+from sys import argv
+print(int(argv[1])+int(argv[2])) ## Here we convert string into integer
+
+o/p:
+(venv) PS M:\Pprac> python durga.py 10 20
+30
+
+note::
+1. space is the separator
+   we should use.
+2.always str type
+  typecasting
+3. out of range index
+   IndexError we get ...
+
+input and output statements::
+  input statements ----> input()
+                         command line arguments ----> vitini use chesi manam input values estham
+
+
+Topic :: output statements::
+
+Form-1::  print()
+To print new line character (\n)
+ex1::
+print("heloo")
+print()
+print("hi")
+
+form-2:: print(string)
+
+1.In the string we can use escape characters also.
+2.string repitation operator  *
+  --one argument must be "string" and other argument must be "int"
+ "durga"*3
+ 5*"mera"
+
+3. String concatenation operator also +
+--- both arguments should be string type:
+
+"meera"+"vali"
+
+Form3 :: print() with sep attribute::(sep means separator)
+default value for separator is "space"
+other than space if you want any other, then we should use "sep" attribute
+
+a,b,c=10,20,30
+print("the values are: ", a,b,c)
+o/p:: the values are:  10 20 30  #### manaku python lo print statement lo default gaa manam echina values ki madhyalo "space" anedhi unidhi like 10 20 30
+
+
+a,b,c=1,2,3
+print("using separator attribute values: ",a,b,c,sep="-")
+
+o/p:: using separator attribute values: -1-2-3
+
+Form4 :: print() with end attribute::
+
+#hello*durga*soft*solutions
+other than \n if you want any other character :: end attribute
+
+print("meera", end="+")
+print("vali")
+
+o/p::meera+vali
+
+
+
+Form 5::
+print(object)
+ manam yehdainaa thiskovachu print statement
+
+eg::
+print(10)
+print(True)
+print("string")
+print((10,20,30))
+print([10,20,30])
+
+Form 6:: print(formatted string)
+
+formaters::
+%i ---> int
+%d ---> int
+%f ---> float
+%s ---> string
+
+Syntax :: print('formatted string' %(variable list))
+
+a=10
+b=20
+print('a value is %i' %a)
+o/p:: a value is 10
+
+a=20
+b=30
+print('the sum of a and b is %i' %(a+b))
+o/p:: the sum of a and b is 50
+
+name="meeravali"
+l1=[10,12,15,21]
+print('hello mr.%s ...you get these scores %s' %(name,l1))
+o/p:: hello mr.meeravali ...you get these scores [10, 12, 15, 21]
+
+
+Form 6:: print() with{ }
+
+{} ----> replacement operator
+
+name="meera"
+my_age="22"
+my_gf_name="shabi"
+print('hello {a}, your age {b} and my sweetheart {c}'.format(a=name,b=my_age,c=my_gf_name))
+
+o/p::hello meera, your age 22 and my sweetheart shabi
+
+name="meeravali"
+your_fav_per="your frds"
+your_crush="tammana"
+print('hello {0} you and {1} like most of your crush {2}'.format(name,your_fav_per,your_crush))
+
+o/p:: hello meeravali you and your frds like most of your crush tammana
+
+
+Definition and Usage
+The enumerate() function takes a collection (e.g. a tuple) and returns it as an enumerate object.
+
+The enumerate() function adds a counter as the key of the enumerate object.
+
+Syntax:
+
+enumerate(iterable, start=0)
+Parameters:
+
+Iterable: any object that supports iteration
+Start: the index value from which the counter is to be started, by default it is 0
+
+#eg1:: Convert a tuple into an enumerate object:
+
+x = ('apple', 'banana', 'cherry')
+y = enumerate(x)
+o/p:: [(0, 'apple'), (1, 'banana'), (2, 'cherry')]
+
+# Python program to illustrate
+# enumerate function
+l1 = ["eat", "sleep", "repeat"]
+s1 = "geek"
+
+# creating enumerate objects
+obj1 = enumerate(l1)
+obj2 = enumerate(s1)
+
+print ("Return type:", type(obj1))
+print (list(enumerate(l1)))
+
+# changing start index to 2 from 0
+print (list(enumerate(s1, 2)))
+
+o/p::
+Return type: <class 'enumerate'>
+[(0, 'eat'), (1, 'sleep'), (2, 'repeat')]
+[(2, 'g'), (3, 'e'), (4, 'e'), (5, 'k')]
+
+
+
+       ###   FLOW CONTROL AND CONDITIONAls
+
+
+There are 3 flow control statements::
+1.conditional statements (0r) selection statements
+
+if
+if-else
+if-elif-else
+if-elif
+
+
+2.iterative statements (or) loops
+for loops
+while loops
+
+3. Transfer statements
+
+break
+continue
+pass
+
+
+
+conditional statements::
+
+
+
+write a program to find the biggest of the given int values??
+
+data1=int(input("enter a number: "))
+data2=int(input("enter a number: "))
+data3=int(input("enter a number: "))
+if data1>data2 and data1>data3:
+    print("data1 is biggest number", data1)
+elif data2>data1 and data2>data3:
+    print("data2 is biggest number", data2)
+else:
+    print("data3 is biggest number", data3)
+
+o/p::
+enter a number: 3
+enter a number: 1
+enter a number: 5
+data3 is biggest number 5
+
+##write the program giving number is even or odd
+
+data=int(input("enter a number: "))
+if data%2==0:
+    print("number is even number",data)
+else:
+    print("odd number")
+
+o/p::
+enter a number: 4
+number is even number 4
+
+###write a program tp tale a single digit number from keyboard and print its value in english word??
+
+0 ---- Zore
+1 ---- one
+2 ---- two
+3 ---- three
+.
+.
+.
+.
+9 ---- nine
+ 10 ---> pklease enter a digit from 0 to 9 only
+
+
+n=int(input("enter a number from 0 to 9: "))
+if n==0:
+    print("zero")
+elif n==1:
+    print("one")
+elif n==2:
+    print("two")
+elif n==3:
+    print("three")
+elif n==4:
+    print("four")
+elif n==5:
+    print("five")
+elif n==6:
+    print("six")
+elif n==7:
+    print("seven")
+elif n==8:
+    print("eight")
+elif n==9:
+    print("nine")
+else:
+    print("please enter digit form 0 to 9 only")
+
+o/p::
+enter a number from 0 to 9: 7
+seven
+
+"""
+n=int(input("enter a number from 0 to 9:"))
+d1={0:'zero', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five', 6:'six', 7:'seven', 8:'eight', 9:'nine'}
+if n in d1:
+    print(d1[n])
+else:
+    print("enter any digit from 0 to 9 only")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
